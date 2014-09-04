@@ -10,10 +10,8 @@ void setup() {
   
   uView.begin();
   
-  //widget = new MicroViewGauge(32, 24, 60, 80, WIDGETSTYLE1);
-  widget = new MicroViewGauge(30, 24, 60, 80, WIDGETSTYLE1);
+  widget = new MicroViewGauge(23, 23, 60, 80, WIDGETSTYLE1);
   
-  //uView.setFontType(3);
   uView.clear(PAGE);
   
   Serial.begin(9600);
@@ -23,15 +21,16 @@ void loop() {
   int tempF = Thermistor.getTempF(true);
   
   uView.clear(PAGE);
+  
   widget->reDraw();
   widget->setValue(tempF);
-  uView.display();
   
-//  uView.clear(PAGE);
-//  uView.setCursor(32, 0);
-//  uView.print(tempF);
-
-
+  uView.setFontType(3);
+  uView.setCursor(39, 0);
+  uView.print(tempF);
+  
+  uView.setFontType(0);
+  
   uView.display();
   
   delay(100);
