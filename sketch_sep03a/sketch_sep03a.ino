@@ -10,11 +10,9 @@ void setup() {
   
   uView.begin();
   
-  widget = new MicroViewGauge(23, 23, 60, 80, WIDGETSTYLE1);
+  widget = new MicroViewGauge(23, 23, 60, 99, WIDGETSTYLE1);
   
   uView.clear(PAGE);
-  
-  Serial.begin(9600);
 }
 
 void loop() {
